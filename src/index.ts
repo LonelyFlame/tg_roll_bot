@@ -41,8 +41,8 @@ bot.on('inline_query', async (ctx) => {
     {
       id: `roll_4d6k3_${Date.now()}`,
       type: 'article',
-      title: 'Бросить харрактеристики',
-      description: `Нажми, чтобы отправить результат четырех бросков 4d6k3 для 6 харрактеристик в чат`,
+      title: 'Бросить характеристики',
+      description: `Нажми, чтобы отправить результат броска 4d6k3 для 6 характеристик в чат`,
       input_message_content: {
         message_text: `${getMessageText('4d6k3')}\n${getMessageText('4d6k3')}\n${getMessageText('4d6k3')}\n${getMessageText('4d6k3')}\n${getMessageText('4d6k3')}\n${getMessageText('4d6k3')}`,
         parse_mode: 'Markdown'
@@ -66,7 +66,7 @@ bot.on('inline_query', async (ctx) => {
   return ctx.answerInlineQuery(results, { cache_time: 0 });
 });
 
-function lounch() {
+function launch() {
   bot.launch()
     .then(() => console.log('Бот запущен!'))
     .catch((err) => {
@@ -74,8 +74,8 @@ function lounch() {
 
       bot.stop();
 
-      lounch();
+      launch();
     });
 }
 
-lounch();
+launch();
